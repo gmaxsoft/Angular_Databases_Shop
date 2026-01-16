@@ -1,0 +1,8 @@
+<ul class="product-list">
+  <li *ngFor="let product of products" class="product-item">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p class="price">{{ product.price | number:'1.2-2' }} zł</p>
+    <button (click)="onAddToCart(product)">Dodaj do koszyka</button>
+  </li>
+</ul>

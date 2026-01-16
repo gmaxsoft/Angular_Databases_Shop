@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Sample Database 1",
+    "description": "A comprehensive database for e-commerce analytics.",
+    "price": 99.99,
+    "category_id": 1,
+    "image_url": "https://example.com/db1.jpg",
+    "download_url": "https://example.com/download/db1.zip"
+  },
+  {
+    "id": 2,
+    "name": "User Behavior Dataset",
+    "description": "Dataset containing user interaction data for machine learning.",
+    "price": 149.99,
+    "category_id": 2,
+    "image_url": "https://example.com/db2.jpg",
+    "download_url": "https://example.com/download/db2.zip"
+  },
+  {
+    "id": 3,
+    "name": "Financial Records Database",
+    "description": "Historical financial data for analysis and modeling.",
+    "price": 199.99,
+    "category_id": 3,
+    "image_url": "https://example.com/db3.jpg",
+    "download_url": "https://example.com/download/db3.zip"
+  }
+]

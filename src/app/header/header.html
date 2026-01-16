@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="header-content">
+      <div class="logo">
+        <a routerLink="/">
+          <span>{{ translationService.instant('app.title') }}</span>
+        </a>
+      </div>
+
+      <nav class="navigation">
+        <button mat-button routerLink="/">{{ translationService.instant('nav.home') }}</button>
+        <button mat-button routerLink="/products">{{ translationService.instant('nav.products') }}</button>
+        <button mat-button routerLink="/about">{{ translationService.instant('nav.about') }}</button>
+        <button mat-button routerLink="/contact">{{ translationService.instant('nav.contact') }}</button>
+      </nav>
+
+      <div class="actions">
+        <button mat-icon-button routerLink="/cart" aria-label="Shopping Cart">
+          <mat-icon matBadge="{{ cartItemCount }}" matBadgeColor="accent" aria-hidden="false">shopping_cart</mat-icon>
+        </button>
+
+        <!-- Language Switcher -->
+        <button mat-button [matMenuTriggerFor]="languageMenu">
+          <mat-icon>language</mat-icon>
+          {{ getCurrentLanguageName() }}
+        </button>
+        <mat-menu #languageMenu="matMenu">
+          <button mat-menu-item *ngFor="let lang of availableLanguages" (click)="changeLanguage(lang.code)">
+            <span>{{ lang.name }}</span>
+          </button>
+        </mat-menu>
+
+        <ng-container *ngIf="!currentUser">
+          <button mat-raised-button color="accent" routerLink="/login">{{ translationService.instant('auth.login.title') }}</button>
+          <button mat-button routerLink="/register">{{ translationService.instant('auth.register.title') }}</button>
+        </ng-container>
+        <ng-container *ngIf="currentUser">
+          <span class="user-info">{{ translationService.instant('auth.welcome', { username: currentUser.username }) }}</span>
+          <button mat-button routerLink="/profile">{{ translationService.instant('auth.profile.title') }}</button>
+          <button mat-button (click)="logout()">{{ translationService.instant('auth.logout') }}</button>
+        </ng-container>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

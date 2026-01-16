@@ -1,0 +1,25 @@
+mat-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+}
+
+.error {
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+mat-card-actions {
+  justify-content: center;
+}

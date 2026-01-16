@@ -1,0 +1,126 @@
+<div class="checkout-container">
+  <mat-card class="checkout-card">
+    <mat-card-header>
+      <mat-card-title>{{ translationService.instant('checkout.title') }}</mat-card-title>
+      <mat-card-subtitle>{{ translationService.instant('checkout.subtitle') }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>{{ translationService.instant('checkout.orderSummary') }}</h3>
+        <div class="order-items">
+          <div class="order-item" *ngFor="let item of cartItems">
+            <div class="item-info">
+              <span class="item-name">{{ item.product.name }}</span>
+              <span class="item-quantity">x{{ item.quantity }}</span>
+            </div>
+            <span class="item-price">{{ (item.product.price * item.quantity) | number:'1.2-2' }} PLN</span>
+          </div>
+        </div>
+        <div class="order-total">
+          <strong>{{ translationService.instant('checkout.total') }}: {{ totalPrice | number:'1.2-2' }} PLN</strong>
+        </div>
+      </div>
+
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="checkout-form">
+        <!-- Shipping Information -->
+        <div class="form-section">
+          <h3>{{ translationService.instant('checkout.shippingInfo') }}</h3>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>{{ translationService.instant('checkout.firstName') }}</mat-label>
+              <input matInput formControlName="firstName" [placeholder]="translationService.instant('checkout.placeholders.firstName')">
+              <mat-error *ngIf="checkoutForm.get('firstName')?.invalid && checkoutForm.get('firstName')?.touched">
+                {{ getErrorMessage('firstName') }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>{{ translationService.instant('checkout.lastName') }}</mat-label>
+              <input matInput formControlName="lastName" [placeholder]="translationService.instant('checkout.placeholders.lastName')">
+              <mat-error *ngIf="checkoutForm.get('lastName')?.invalid && checkoutForm.get('lastName')?.touched">
+                {{ getErrorMessage('lastName') }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ translationService.instant('checkout.email') }}</mat-label>
+            <input matInput type="email" formControlName="email" [placeholder]="translationService.instant('checkout.placeholders.email')">
+            <mat-error *ngIf="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched">
+              {{ getErrorMessage('email') }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ translationService.instant('checkout.phone') }}</mat-label>
+            <input matInput formControlName="phone" [placeholder]="translationService.instant('checkout.placeholders.phone')">
+            <mat-error *ngIf="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched">
+              {{ getErrorMessage('phone') }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ translationService.instant('checkout.address') }}</mat-label>
+            <textarea matInput formControlName="address" [placeholder]="translationService.instant('checkout.placeholders.address')" rows="3"></textarea>
+            <mat-error *ngIf="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched">
+              {{ getErrorMessage('address') }}
+            </mat-error>
+          </mat-form-field>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>{{ translationService.instant('checkout.city') }}</mat-label>
+              <input matInput formControlName="city" [placeholder]="translationService.instant('checkout.placeholders.city')">
+              <mat-error *ngIf="checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched">
+                {{ getErrorMessage('city') }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>{{ translationService.instant('checkout.postalCode') }}</mat-label>
+              <input matInput formControlName="postalCode" [placeholder]="translationService.instant('checkout.placeholders.postalCode')">
+              <mat-error *ngIf="checkoutForm.get('postalCode')?.invalid && checkoutForm.get('postalCode')?.touched">
+                {{ getErrorMessage('postalCode') }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="form-section">
+          <h3>{{ translationService.instant('checkout.paymentMethod') }}</h3>
+
+          <mat-radio-group formControlName="paymentMethod" class="payment-methods">
+            <mat-radio-button *ngFor="let method of paymentMethods" [value]="method.id" class="payment-method">
+              <div class="payment-method-content">
+                <mat-icon>{{ method.icon }}</mat-icon>
+                <div class="payment-info">
+                  <div class="payment-name">{{ method.name }}</div>
+                  <div class="payment-description">{{ method.description }}</div>
+                </div>
+              </div>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- Checkout Actions -->
+        <div class="checkout-actions">
+          <button mat-stroked-button type="button" (click)="goBack()" [disabled]="isProcessing">
+            <mat-icon>arrow_back</mat-icon>
+            {{ translationService.instant('checkout.backToCart') }}
+          </button>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="checkoutForm.invalid || isProcessing">
+            <mat-icon *ngIf="!isProcessing">credit_card</mat-icon>
+            <mat-icon *ngIf="isProcessing">hourglass_empty</mat-icon>
+            <span *ngIf="!isProcessing">{{ translationService.instant('checkout.placeOrder') }}</span>
+            <span *ngIf="isProcessing">{{ translationService.instant('checkout.processing') }}</span>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

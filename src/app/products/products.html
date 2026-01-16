@@ -1,0 +1,14 @@
+<div class="products-container">
+  <div class="view-toggle">
+    <button (click)="switchView('list')" [class.active]="viewMode === 'list'">{{ translationService.instant('products.view.list') }}</button>
+    <button (click)="switchView('grid')" [class.active]="viewMode === 'grid'">{{ translationService.instant('products.view.grid') }}</button>
+  </div>
+
+  <div class="products-content">
+    <app-product-list *ngIf="viewMode === 'list'" [products]="products"></app-product-list>
+    <app-product-grid *ngIf="viewMode === 'grid'" [products]="products"></app-product-grid>
+  </div>
+
+  <!-- Structured Data for Products -->
+  <div [innerHTML]="structuredData"></div>
+</div>

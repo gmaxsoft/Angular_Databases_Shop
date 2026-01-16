@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@databasestore.com",
+    "password": "admin123"
+  },
+  {
+    "id": 2,
+    "username": "user1",
+    "email": "user1@example.com",
+    "password": "user123"
+  },
+  {
+    "id": 3,
+    "username": "dataanalyst",
+    "email": "analyst@databasestore.com",
+    "password": "analyst456"
+  }
+]

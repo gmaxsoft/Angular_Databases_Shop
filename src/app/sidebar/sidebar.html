@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <h3>{{ translationService.instant('sidebar.categories') }}</h3>
+  <mat-list>
+    <mat-list-item *ngFor="let category of categories">
+      <a [routerLink]="['/category', category.id]" mat-list-item>{{ category.name }}</a>
+    </mat-list-item>
+  </mat-list>
+</div>

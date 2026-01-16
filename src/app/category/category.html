@@ -1,0 +1,24 @@
+<div class="category-container">
+  <h1>Produkty z kategorii {{ categoryId }}</h1>
+
+  <div class="view-controls">
+    <button (click)="switchView('grid')" [class.active]="viewMode === 'grid'">Widok siatki</button>
+    <button (click)="switchView('list')" [class.active]="viewMode === 'list'">Widok listy</button>
+  </div>
+
+  <div class="products-section">
+    <app-product-grid
+      *ngIf="viewMode === 'grid' && products.length > 0"
+      [products]="products">
+    </app-product-grid>
+
+    <app-product-list
+      *ngIf="viewMode === 'list' && products.length > 0"
+      [products]="products">
+    </app-product-list>
+
+    <div *ngIf="products.length === 0" class="no-products">
+      <p>Brak produktów w tej kategorii.</p>
+    </div>
+  </div>
+</div>

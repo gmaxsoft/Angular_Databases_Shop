@@ -1,0 +1,57 @@
+<div class="order-details-container" *ngIf="order">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ translationService.instant('orders.details') }} #{{ order.id }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ translationService.instant('orders.placed') }}: {{ formatDate(order.createdAt) }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="order-info">
+        <div class="info-item">
+          <strong>{{ translationService.instant('orders.status') }}:</strong>
+          <mat-chip [color]="getStatusColor(order.status)">
+            {{ getStatusLabel(order.status) }}
+          </mat-chip>
+        </div>
+        <div class="info-item">
+          <strong>{{ translationService.instant('orders.total') }}:</strong> {{ formatCurrency(order.total) }}
+        </div>
+        <div class="info-item">
+          <strong>{{ translationService.instant('orders.lastUpdate') }}:</strong> {{ formatDate(order.updatedAt) }}
+        </div>
+      </div>
+
+      <h3>{{ translationService.instant('orders.items') }}</h3>
+      <mat-list>
+        <mat-list-item *ngFor="let item of order.items">
+          <div class="product-item">
+            <div class="product-info">
+              <h4>{{ item.product.name }}</h4>
+              <p>{{ item.product.description }}</p>
+              <p><strong>{{ translationService.instant('orders.unitPrice') }}:</strong> {{ formatCurrency(item.product.price) }}</p>
+              <p><strong>{{ translationService.instant('orders.quantity') }}:</strong> {{ item.quantity }}</p>
+              <p><strong>{{ translationService.instant('orders.subtotal') }}:</strong> {{ formatCurrency(item.product.price * item.quantity) }}</p>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="downloadOrder()">
+          <mat-icon>download</mat-icon>
+          {{ translationService.instant('orders.download') }}
+        </button>
+        <button mat-button (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          {{ translationService.instant('orders.back') }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="!order" class="loading">
+  <p>{{ translationService.instant('orders.loading') }}</p>
+</div>

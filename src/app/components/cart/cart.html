@@ -1,0 +1,34 @@
+<div class="cart-container">
+  <h2>{{ translationService.instant('cart.title') }}</h2>
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>{{ translationService.instant('cart.empty') }}</p>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.product.image_url" [alt]="item.product.name" class="product-image" />
+        <div class="product-details">
+          <h3>{{ item.product.name }}</h3>
+          <p>{{ item.product.description }}</p>
+          <p>{{ translationService.instant('cart.price') }}: {{ item.product.price | number:'1.2-2' }} PLN</p>
+        </div>
+        <div class="quantity-controls">
+          <button (click)="decreaseQuantity(item)" class="quantity-btn">-</button>
+          <span class="quantity">{{ item.quantity }}</span>
+          <button (click)="increaseQuantity(item)" class="quantity-btn">+</button>
+        </div>
+        <div class="item-total">
+          <p>{{ translationService.instant('cart.total') }}: {{ (item.product.price * item.quantity) | number:'1.2-2' }} PLN</p>
+        </div>
+        <button (click)="removeItem(item.product.id)" class="remove-btn">{{ translationService.instant('cart.remove') }}</button>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <h3>{{ translationService.instant('cart.totalPrice') }}: {{ totalPrice | number:'1.2-2' }} PLN</h3>
+      <button routerLink="/checkout" class="checkout-btn" color="primary" mat-raised-button>
+        {{ translationService.instant('checkout.placeOrder') }}
+      </button>
+      <button (click)="clearCart()" class="clear-cart-btn">{{ translationService.instant('cart.clear') }}</button>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 {
   "name": "database-shop",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Maxsoft",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -23,10 +24,12 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.2.11",
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",
     "@angular/core": "^20.3.0",
     "@angular/forms": "^20.3.0",
+    "@angular/material": "^20.2.11",
     "@angular/platform-browser": "^20.3.0",
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",

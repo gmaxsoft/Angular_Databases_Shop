@@ -1,0 +1,39 @@
+// Header component styles
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  font-weight: 500;
+  margin-right: 10px;
+}

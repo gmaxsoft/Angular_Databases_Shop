@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="contact-info">
+      <h3>{{ translationService.instant('footer.contact.title') }}</h3>
+      <p>{{ translationService.instant('footer.contact.email') }}</p>
+      <p>{{ translationService.instant('footer.contact.phone') }}</p>
+      <p>{{ translationService.instant('footer.contact.address') }}</p>
+    </div>
+
+    <div class="links">
+      <h3>{{ translationService.instant('footer.links.title') }}</h3>
+      <ul>
+        <li><a href="#">{{ translationService.instant('footer.links.privacy') }}</a></li>
+        <li><a href="#">{{ translationService.instant('footer.links.terms') }}</a></li>
+        <li><a href="#">{{ translationService.instant('footer.links.about') }}</a></li>
+        <li><a href="#">{{ translationService.instant('footer.links.support') }}</a></li>
+      </ul>
+    </div>
+
+    <div class="social">
+      <h3>{{ translationService.instant('footer.social.title') }}</h3>
+      <div class="social-links">
+        <a href="#" [attr.aria-label]="translationService.instant('footer.social.facebook')">{{ translationService.instant('footer.social.facebook') }}</a>
+        <a href="#" [attr.aria-label]="translationService.instant('footer.social.twitter')">{{ translationService.instant('footer.social.twitter') }}</a>
+        <a href="#" [attr.aria-label]="translationService.instant('footer.social.linkedin')">{{ translationService.instant('footer.social.linkedin') }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p [innerHTML]="translationService.instant('footer.copyright')"></p>
+  </div>
+</footer>

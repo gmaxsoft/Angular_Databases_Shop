@@ -1,0 +1,161 @@
+{
+  "app": {
+    "title": "DatabaseShop",
+    "description": "Wiodący sklep z narzędziami i rozwiązaniami bazodanowymi. Znajdź wszystko czego potrzebujesz dla profesjonalnej pracy z bazami danych."
+  },
+  "nav": {
+    "home": "Strona główna",
+    "products": "Produkty",
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "cart": {
+    "title": "Koszyk",
+    "empty": "Koszyk jest pusty",
+    "price": "Cena",
+    "quantity": "Ilość",
+    "total": "Suma",
+    "totalPrice": "Suma całkowita",
+    "remove": "Usuń",
+    "clear": "Wyczyść koszyk",
+    "addToCart": "Dodaj do koszyka"
+  },
+  "auth": {
+    "login": {
+      "title": "Logowanie",
+      "username": "Nazwa użytkownika",
+      "password": "Hasło",
+      "submit": "Zaloguj się",
+      "registerLink": "Nie masz konta? Zarejestruj się",
+      "errors": {
+        "usernameRequired": "Nazwa użytkownika jest wymagana",
+        "passwordRequired": "Hasło jest wymagane",
+        "passwordMinLength": "Hasło musi mieć co najmniej 6 znaków"
+      }
+    },
+    "register": {
+      "title": "Rejestracja",
+      "username": "Nazwa użytkownika",
+      "email": "Email",
+      "password": "Hasło",
+      "submit": "Zarejestruj się",
+      "loginLink": "Masz już konto? Zaloguj się",
+      "errors": {
+        "usernameRequired": "Nazwa użytkownika jest wymagana",
+        "emailRequired": "Email jest wymagany",
+        "emailInvalid": "Wprowadź prawidłowy adres email",
+        "passwordRequired": "Hasło jest wymagane",
+        "passwordMinLength": "Hasło musi mieć co najmniej 6 znaków"
+      }
+    },
+    "profile": {
+      "title": "Edytuj profil",
+      "subtitle": "Zaktualizuj swoje dane osobowe",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "address": "Adres",
+      "phone": "Telefon",
+      "save": "Zapisz zmiany",
+      "saving": "Zapisywanie...",
+      "placeholders": {
+        "firstName": "Wprowadź imię",
+        "lastName": "Wprowadź nazwisko",
+        "email": "Wprowadź email",
+        "address": "Wprowadź adres",
+        "phone": "Wprowadź numer telefonu"
+      }
+    },
+    "welcome": "Witaj, {{username}}",
+    "logout": "Wyloguj się"
+  },
+  "products": {
+    "view": {
+      "list": "Lista",
+      "grid": "Siatka"
+    },
+    "currency": "PLN"
+  },
+  "orders": {
+    "details": "Szczegóły zamówienia",
+    "orderNumber": "Zamówienie #{{id}}",
+    "placed": "Złożone",
+    "status": "Status",
+    "total": "Łączna kwota",
+    "lastUpdate": "Ostatnia aktualizacja",
+    "items": "Produkty w zamówieniu",
+    "unitPrice": "Cena jednostkowa",
+    "quantity": "Ilość",
+    "subtotal": "Suma",
+    "download": "Pobierz zamówienie",
+    "back": "Powrót do panelu",
+    "loading": "Ładowanie szczegółów zamówienia..."
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd",
+    "success": "Operacja zakończona sukcesem"
+  },
+  "meta": {
+    "title": "DatabaseShop - Narzędzia bazodanowe",
+    "description": "Wiodący sklep z narzędziami i rozwiązaniami bazodanowymi. Znajdź wszystko czego potrzebujesz dla profesjonalnej pracy z bazami danych."
+  },
+  "footer": {
+    "contact": {
+      "title": "Kontakt",
+      "email": "Email: contact@databaseshop.com",
+      "phone": "Telefon: +48 123 456 789",
+      "address": "Adres: Warszawa, Polska"
+    },
+    "links": {
+      "title": "Szybkie linki",
+      "privacy": "Polityka prywatności",
+      "terms": "Regulamin",
+      "about": "O nas",
+      "support": "Wsparcie"
+    },
+    "social": {
+      "title": "Śledź nas",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "&copy; 2024 Database Shop. Wszelkie prawa zastrzeżone."
+  },
+  "sidebar": {
+    "categories": "Kategorie"
+  },
+  "checkout": {
+    "title": "Podsumowanie zamówienia",
+    "subtitle": "Dokończ zakup produktów",
+    "orderSummary": "Podsumowanie zamówienia",
+    "total": "Łączna kwota",
+    "shippingInfo": "Dane dostawy",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "phone": "Telefon",
+    "address": "Adres",
+    "city": "Miasto",
+    "postalCode": "Kod pocztowy",
+    "paymentMethod": "Metoda płatności",
+    "backToCart": "Powrót do koszyka",
+    "placeOrder": "Złóż zamówienie",
+    "processing": "Przetwarzanie...",
+    "placeholders": {
+      "firstName": "Wprowadź imię",
+      "lastName": "Wprowadź nazwisko",
+      "email": "Wprowadź adres email",
+      "phone": "Wprowadź numer telefonu",
+      "address": "Wprowadź adres dostawy",
+      "city": "Wprowadź miasto",
+      "postalCode": "Wprowadź kod pocztowy"
+    },
+    "errors": {
+      "required": "To pole jest wymagane",
+      "email": "Wprowadź prawidłowy adres email",
+      "minLength": "Minimalna długość to 2 znaki",
+      "pattern": "Wprowadź prawidłowy format"
+    }
+  }
+}

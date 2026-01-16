@@ -1,59 +1,108 @@
-# DatabaseShop
+# Database Shop
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/maxsoft/database-shop)
+[![Author](https://img.shields.io/badge/author-Maxsoft-green.svg)](https://maxsoft.pl)
 
-## Development server
+Sklep internetowy specjalizujący się w narzędziach i rozwiązaniach bazodanowych. Aplikacja oferuje szeroki wybór produktów związanych z bazami danych, od narzędzi do zarządzania po oprogramowanie analityczne.
 
-To start a local development server, run:
+## 🚀 Funkcje
 
+### 🛍️ Sklep internetowy
+- Przeglądanie produktów i kategorii
+- Koszyk zakupowy z pełną funkcjonalnością
+- System zamówień i zarządzania kontem użytkownika
+- Responsywny design dostosowany do urządzeń mobilnych
+
+### 🌐 Wielojęzyczność (i18n)
+- Pełne wsparcie dla języka polskiego i angielskiego
+- Łatwe przełączanie języka przez menu w header
+- Wszystkie teksty aplikacji są tłumaczone dynamicznie
+- Zachowanie wybranego języka między sesjami
+
+### 📱 Technologie
+- **Angular 20** - nowoczesny framework do budowania aplikacji webowych
+- **Angular Material** - komponenty UI zgodne z Material Design
+- **TypeScript** - typowany JavaScript dla lepszej jakości kodu
+- **SCSS** - zaawansowane style CSS z zmiennymi i mixinami
+
+## 📦 Instalacja i uruchomienie
+
+### Wymagania wstępne
+- Node.js (wersja 18+)
+- npm lub yarn
+- Angular CLI
+
+### Instalacja zależności
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Uruchomienie aplikacji
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Aplikacja będzie dostępna pod adresem: `http://localhost:4200`
 
+### Budowanie dla produkcji
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+## 🏗️ Struktura projektu
 
-To build the project run:
-
-```bash
-ng build
+```
+database-shop/
+├── src/
+│   ├── app/
+│   │   ├── components/          # Komponenty współdzielone
+│   │   │   ├── cart/           # Koszyk zakupowy
+│   │   │   ├── login/          # Formularz logowania
+│   │   │   ├── register/       # Formularz rejestracji
+│   │   │   ├── user-profile/   # Profil użytkownika
+│   │   │   ├── order-details/  # Szczegóły zamówienia
+│   │   │   └── ...
+│   │   ├── services/           # Usługi aplikacji
+│   │   │   ├── translation.service.ts  # Usługa tłumaczeń
+│   │   │   ├── cart.service.ts        # Zarządzanie koszykiem
+│   │   │   ├── auth.service.ts        # Autentyfikacja
+│   │   │   └── ...
+│   │   ├── assets/i18n/       # Pliki tłumaczeń
+│   │   │   ├── pl.json        # Tłumaczenia polskie
+│   │   │   └── en.json        # Tłumaczenia angielskie
+│   │   └── ...
+├── public/                    # Statyczne zasoby
+└── ...
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🌍 Wielojęzyczność
 
-## Running unit tests
+Aplikacja obsługuje dwa języki:
+- **Polski** (domyślny)
+- **English**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Dodawanie nowego języka
+1. Utwórz plik `xx.json` w folderze `src/assets/i18n/`
+2. Dodaj tłumaczenia zgodnie ze strukturą istniejących plików
+3. Zaktualizuj `TranslationService` aby obsługiwał nowy język
 
-```bash
-ng test
-```
+## 🔧 Konfiguracja
 
-## Running end-to-end tests
+### Routing
+Wszystkie ścieżki są zdefiniowane w `app.routes.ts` bez polskich znaków i spacji dla lepszej kompatybilności z URL.
 
-For end-to-end (e2e) testing, run:
+### Metatagi
+Dynamiczne metatagi są aktualizowane automatycznie przy zmianie języka i zawartości strony.
 
-```bash
-ng e2e
-```
+## 📱 Responsywność
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Aplikacja jest w pełni responsywna i działa poprawnie na:
+- Komputerach stacjonarnych
+- Tabletach
+- Smartfonach
 
-## Additional Resources
+## 🤝 Kontakt
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Maxsoft** - [https://maxsoft.pl](https://maxsoft.pl)
+
+Projekt stworzony przez firmę Maxsoft - specjalistów w dziedzinie tworzenia nowoczesnych aplikacji webowych i rozwiązań e-commerce.

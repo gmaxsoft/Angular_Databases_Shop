@@ -1,0 +1,8 @@
+<div class="product-grid">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.image_url" [alt]="product.name" class="product-image" />
+    <h3>{{ product.name }}</h3>
+    <p class="price">{{ product.price }} {{ translationService.instant('products.currency') }}</p>
+    <button (click)="onAddToCart(product)" class="add-to-cart-btn">{{ translationService.instant('cart.addToCart') }}</button>
+  </div>
+</div>

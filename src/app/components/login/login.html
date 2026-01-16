@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ translationService.instant('auth.login.title') }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ translationService.instant('auth.login.username') }}</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">{{ translationService.instant('auth.login.errors.usernameRequired') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{ translationService.instant('auth.login.password') }}</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">{{ translationService.instant('auth.login.errors.passwordRequired') }}</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">{{ translationService.instant('auth.login.errors.passwordMinLength') }}</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">{{ translationService.instant('auth.login.submit') }}</button>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button routerLink="/register">{{ translationService.instant('auth.login.registerLink') }}</button>
+  </mat-card-actions>
+</mat-card>

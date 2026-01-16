@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "items": [
+      {
+        "product": {
+          "id": 1,
+          "name": "Laptop Dell XPS 13",
+          "description": "Ultrabook z ekranem 13 cali",
+          "price": 4500,
+          "categoryId": 1,
+          "image": "/assets/images/laptop.jpg"
+        },
+        "quantity": 1
+      },
+      {
+        "product": {
+          "id": 2,
+          "name": "Myszka Logitech MX Master 3",
+          "description": "Bezprzewodowa myszka ergonomiczna",
+          "price": 250,
+          "categoryId": 2,
+          "image": "/assets/images/mouse.jpg"
+        },
+        "quantity": 2
+      }
+    ],
+    "total": 5000,
+    "status": "delivered",
+    "createdAt": "2024-10-01T10:00:00.000Z",
+    "updatedAt": "2024-10-05T14:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "items": [
+      {
+        "product": {
+          "id": 3,
+          "name": "Monitor LG 27UL950-W",
+          "description": "4K monitor 27 cali",
+          "price": 2200,
+          "categoryId": 3,
+          "image": "/assets/images/monitor.jpg"
+        },
+        "quantity": 1
+      }
+    ],
+    "total": 2200,
+    "status": "shipped",
+    "createdAt": "2024-10-15T09:15:00.000Z",
+    "updatedAt": "2024-10-20T11:45:00.000Z"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "items": [
+      {
+        "product": {
+          "id": 4,
+          "name": "Klawiatura mechaniczna Keychron K8",
+          "description": "65% klawiatura bezprzewodowa",
+          "price": 400,
+          "categoryId": 2,
+          "image": "/assets/images/keyboard.jpg"
+        },
+        "quantity": 1
+      },
+      {
+        "product": {
+          "id": 5,
+          "name": "Słuchawki Sony WH-1000XM4",
+          "description": "Bezprzewodowe słuchawki z ANC",
+          "price": 1200,
+          "categoryId": 4,
+          "image": "/assets/images/headphones.jpg"
+        },
+        "quantity": 1
+      }
+    ],
+    "total": 1600,
+    "status": "processing",
+    "createdAt": "2024-10-20T16:30:00.000Z",
+    "updatedAt": "2024-10-22T08:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "items": [
+      {
+        "product": {
+          "id": 6,
+          "name": "Smartfon Samsung Galaxy S23",
+          "description": "Flagowy smartfon z aparatem 50MP",
+          "price": 3500,
+          "categoryId": 5,
+          "image": "/assets/images/phone.jpg"
+        },
+        "quantity": 1
+      }
+    ],
+    "total": 3500,
+    "status": "pending",
+    "createdAt": "2024-11-01T12:00:00.000Z",
+    "updatedAt": "2024-11-01T12:00:00.000Z"
+  }
+]

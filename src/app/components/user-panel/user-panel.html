@@ -1,0 +1,64 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Panel użytkownika</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label="Zamówienia">
+        <div class="orders-section">
+          <h3>Moje zamówienia</h3>
+          <mat-table [dataSource]="orders" class="orders-table">
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+              <mat-cell *matCellDef="let order">{{ order.id }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+              <mat-cell *matCellDef="let order">{{ formatDate(order.createdAt) }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+              <mat-cell *matCellDef="let order">{{ getStatusLabel(order.status) }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="total">
+              <mat-header-cell *matHeaderCellDef>Kwota</mat-header-cell>
+              <mat-cell *matCellDef="let order">{{ formatCurrency(order.total) }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef>Akcje</mat-header-cell>
+              <mat-cell *matCellDef="let order">
+                <button mat-button color="primary" (click)="downloadOrder(order)">
+                  <mat-icon>pobierz</mat-icon>
+                  Pobierz
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+          <div *ngIf="orders.length === 0" class="no-orders">
+            <p>Brak zamówień do wyświetlenia.</p>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Edycja danych">
+        <div class="profile-section">
+          <h3>Edycja danych osobowych</h3>
+          <p>
+            <a mat-button color="accent" routerLink="/profile">
+              <mat-icon>edit</mat-icon>
+              Przejdź do edycji profilu
+            </a>
+          </p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
