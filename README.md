@@ -3,106 +3,109 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/maxsoft/database-shop)
 [![Author](https://img.shields.io/badge/author-Maxsoft-green.svg)](https://maxsoft.pl)
 
-Sklep internetowy specjalizujący się w narzędziach i rozwiązaniach bazodanowych. Aplikacja oferuje szeroki wybór produktów związanych z bazami danych, od narzędzi do zarządzania po oprogramowanie analityczne.
+An online store specializing in database tools and solutions. The application offers a wide selection of database-related products, from management tools to analytical software.
 
-## 🚀 Funkcje
+## 🚀 Features
 
-### 🛍️ Sklep internetowy
-- Przeglądanie produktów i kategorii
-- Koszyk zakupowy z pełną funkcjonalnością
-- System zamówień i zarządzania kontem użytkownika
-- Responsywny design dostosowany do urządzeń mobilnych
+### 🛍️ Online Store
+- Product and category browsing
+- Full-featured shopping cart
+- Order system and user account management
+- Responsive design adapted for mobile devices
 
-### 🌐 Wielojęzyczność (i18n)
-- Pełne wsparcie dla języka polskiego i angielskiego
-- Łatwe przełączanie języka przez menu w header
-- Wszystkie teksty aplikacji są tłumaczone dynamicznie
-- Zachowanie wybranego języka między sesjami
+### 🌐 Internationalization (i18n)
+- Full support for Polish and English languages
+- Easy language switching via header menu
+- All application texts are dynamically translated
+- Selected language is preserved between sessions
 
-### 📱 Technologie
-- **Angular 20** - nowoczesny framework do budowania aplikacji webowych
-- **Angular Material** - komponenty UI zgodne z Material Design
-- **TypeScript** - typowany JavaScript dla lepszej jakości kodu
-- **SCSS** - zaawansowane style CSS z zmiennymi i mixinami
+### 📱 Technologies
+- **Angular 20** - Modern framework for building web applications
+- **Angular Material** - UI components following Material Design
+- **Angular SSR** - Server-Side Rendering for improved SEO and performance
+- **TypeScript** - Typed JavaScript for better code quality
+- **SCSS** - Advanced CSS styles with variables and mixins
+- **RxJS** - Reactive programming library for handling asynchronous operations
+- **Express** - Web server framework for SSR implementation
 
-## 📦 Instalacja i uruchomienie
+## 📦 Installation and Running
 
-### Wymagania wstępne
-- Node.js (wersja 18+)
-- npm lub yarn
+### Prerequisites
+- Node.js (version 18+)
+- npm or yarn
 - Angular CLI
 
-### Instalacja zależności
+### Installing Dependencies
 ```bash
 npm install
 ```
 
-### Uruchomienie aplikacji
+### Running the Application
 ```bash
 npm start
 ```
 
-Aplikacja będzie dostępna pod adresem: `http://localhost:4200`
+The application will be available at: `http://localhost:4200`
 
-### Budowanie dla produkcji
+### Building for Production
 ```bash
 npm run build
 ```
 
-## 🏗️ Struktura projektu
+## 🏗️ Project Structure
 
 ```
 database-shop/
 ├── src/
 │   ├── app/
-│   │   ├── components/          # Komponenty współdzielone
-│   │   │   ├── cart/           # Koszyk zakupowy
-│   │   │   ├── login/          # Formularz logowania
-│   │   │   ├── register/       # Formularz rejestracji
-│   │   │   ├── user-profile/   # Profil użytkownika
-│   │   │   ├── order-details/  # Szczegóły zamówienia
+│   │   ├── components/          # Shared components
+│   │   │   ├── cart/           # Shopping cart
+│   │   │   ├── login/          # Login form
+│   │   │   ├── register/       # Registration form
+│   │   │   ├── user-profile/   # User profile
+│   │   │   ├── order-details/  # Order details
 │   │   │   └── ...
-│   │   ├── services/           # Usługi aplikacji
-│   │   │   ├── translation.service.ts  # Usługa tłumaczeń
-│   │   │   ├── cart.service.ts        # Zarządzanie koszykiem
-│   │   │   ├── auth.service.ts        # Autentyfikacja
+│   │   ├── services/           # Application services
+│   │   │   ├── translation.service.ts  # Translation service
+│   │   │   ├── cart.service.ts        # Cart management
+│   │   │   ├── auth.service.ts        # Authentication
 │   │   │   └── ...
-│   │   ├── assets/i18n/       # Pliki tłumaczeń
-│   │   │   ├── pl.json        # Tłumaczenia polskie
-│   │   │   └── en.json        # Tłumaczenia angielskie
+│   │   ├── assets/i18n/       # Translation files
+│   │   │   ├── pl.json        # Polish translations
+│   │   │   └── en.json        # English translations
 │   │   └── ...
-├── public/                    # Statyczne zasoby
+├── public/                    # Static resources
 └── ...
 ```
 
-## 🌍 Wielojęzyczność
+## 🌍 Internationalization
 
-Aplikacja obsługuje dwa języki:
-- **Polski** (domyślny)
+The application supports two languages:
+- **Polish** (default)
 - **English**
 
-### Dodawanie nowego języka
-1. Utwórz plik `xx.json` w folderze `src/assets/i18n/`
-2. Dodaj tłumaczenia zgodnie ze strukturą istniejących plików
-3. Zaktualizuj `TranslationService` aby obsługiwał nowy język
+### Adding a New Language
+1. Create an `xx.json` file in the `src/assets/i18n/` folder
+2. Add translations following the structure of existing files
+3. Update `TranslationService` to support the new language
 
-## 🔧 Konfiguracja
+## 🔧 Configuration
 
 ### Routing
-Wszystkie ścieżki są zdefiniowane w `app.routes.ts` bez polskich znaków i spacji dla lepszej kompatybilności z URL.
+All routes are defined in `app.routes.ts` without Polish characters and spaces for better URL compatibility.
 
-### Metatagi
-Dynamiczne metatagi są aktualizowane automatycznie przy zmianie języka i zawartości strony.
+### Meta Tags
+Dynamic meta tags are automatically updated when the language and page content change.
 
-## 📱 Responsywność
+## 📱 Responsiveness
 
-Aplikacja jest w pełni responsywna i działa poprawnie na:
-- Komputerach stacjonarnych
-- Tabletach
-- Smartfonach
+The application is fully responsive and works correctly on:
+- Desktop computers
+- Tablets
+- Smartphones
 
-## 🤝 Kontakt
+## 🤝 Contact
 
 **Maxsoft** - [https://maxsoft.pl](https://maxsoft.pl)
 
-Projekt stworzony przez firmę Maxsoft - specjalistów w dziedzinie tworzenia nowoczesnych aplikacji webowych i rozwiązań e-commerce.
+Project created by Maxsoft - specialists in creating modern web applications and e-commerce solutions.
